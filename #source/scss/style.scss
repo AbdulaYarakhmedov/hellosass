@@ -1,0 +1,50 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+// Переменные для блока
+$fz: 100px;
+$color_1: #000;
+$color_2: #fff;
+
+// Шаблон №1
+.tplborder {
+	font-size: 100px;
+	border-bottom: 5px dashed rgb(235, 16, 16);
+}
+
+@mixin fontz($f, $c) {
+	font-size: $f;
+	color: $c;
+}
+
+
+.wrapper {
+	height: 100%;
+	border: solid red;
+	// padding: 10px;
+}
+.header {
+position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #e2caca;
+    border-bottom: 1px solid #141313;
+    z-index: 2;
+}
+.main {
+	border: solid brown;
+	padding: 5px;
+	margin: 60px;
+}
+.footer {position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	z-index: 3;
+	background-color: #e2caca;
+	border: solid;
+	
+}
