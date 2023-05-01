@@ -3,48 +3,182 @@
 
 // Переменные для блока
 $fz: 100px;
-$color_1: #000;
-$color_2: #fff;
+// $color_1: #000;
+// $color_2: #fff;
+$fc: red;
+$fs: italic;
+$fw: 900px;
 
 // Шаблон №1
-.tplborder {
+%tplborder {
 	font-size: 100px;
 	border-bottom: 5px dashed rgb(235, 16, 16);
 }
 
-@mixin fontz($f, $c) {
-	font-size: $f;
-	color: $c;
+// @mixin fontz($f, $c) {
+// 	font-size: $f;
+// 	color: $c;
+// }
+@mixin fontz($fz, $fc, $fs, $fw) {
+	font-size: $fz;
+	color: $fc;
+	font-style: $fs;
+	font-weight: $fw;
 }
 
-
 .wrapper {
-	height: 100%;
+	width: 100%;
 	border: solid red;
 	// padding: 10px;
 }
 .header {
-position: fixed;
-    top: 0;
-    left: 0;
-    height: 60px;
-    width: 100%;
-    background-color: #e2caca;
-    border-bottom: 1px solid #141313;
-    z-index: 2;
+	position: relative;
+	width: auto;
+	height: 300px;
+	// background-color: #3e0daf;
+	border-bottom: 1px solid #0cebba;
+	z-index: 2;
 }
+.center {
+	position: absolute;
+	top: 30px;
+	left: 370px;
+
+	display: inline-block;
+	background: url(/img/place.jpg) 0 0 / contain no-repeat;
+	border: solid rgb(207, 18, 18);
+	width: 1200px;
+	height: 250px;
+}
+.text4 {
+	position: absolute;
+	top: 245px;
+	right: 40px;
+	border: solid rgb(10, 92, 245);
+	width: 240px;
+	height: 35px;
+	font-family: Roboto;
+	font-size: 28px;
+	line-height: 1.2;
+	font-weight: 900;
+	color: #000000;
+}
+
+.text3 {
+	position: absolute;
+	top: 15px;
+	right: 80px;
+	border: solid rgb(36, 94, 202);
+	width: 150px;
+	height: 65px;
+	font-family: Montserrat;
+	font-size: 60px;
+	line-height: 1.2;
+	font-weight: 900;
+	color: #000000;
+}
+.text2 {
+	margin: 169px 30px;
+	border: solid rgb(22, 22, 21);
+	width: 142px;
+	height: 40px;
+	font-family: Roboto;
+	font-size: 28px;
+	line-height: 1.2;
+	font-weight: 900;
+	color: #1a1717;
+}
+.text1 {
+	position: relative;
+	top: 30px;
+	display: block;
+	margin: 0 30px;
+	border: solid 0.5px;
+	width: 270px;
+	height: 70px;
+	font-family: Roboto;
+	font-size: 26px;
+	line-height: 1.2;
+	font-weight: 900;
+	color: #000000;
+}
+
 .main {
-	border: solid brown;
-	padding: 5px;
-	margin: 60px;
+	margin: 2px;
+	height: 3450px;
+	border: solid rgba(207, 182, 230, 0.945);
+
+	.articlemain {
+		position: relative;
+		border: solid rgb(17, 17, 56);
+		width: 1400;
+		height: 900;
+		.picture {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: inline-block;
+			height: 300/800*100%;
+			width: 800px;
+			border: solid green;
+			// background: url(../img/jpg.jpg) 0 0/100% auto no-repeat;
+		}
+		.article {
+			padding: 20px;
+			font-size: 40px;
+			// position: static;
+			// top: 0;
+			// left: ;: 0;
+			display: inline-block;
+			margin: 5px;
+			border: solid rgb(4, 4, 53);
+			height: 800px;
+			width: 950px;
+
+			span {
+				color: red;
+				font-size: 150px;
+				line-height: 80px;
+				font-weight: 400;
+			}
+
+			h2 {
+				display: inline-block;
+				border: solid;
+				color: #473847;
+			}
+
+			.h1 {
+				// display: inline-block;
+				border: solid rgb(4, 4, 53);
+				height: 80px;
+				font-family: Montserrat;
+				font-size: 80px;
+				color: #0cebba;
+				line-height: 80px;
+				font-weight: 900;
+				text-transform: uppercase;
+			}
+		}
+		.link {
+			@include fontz( 100px, green, $fs, 700px)
+			// @extend %tplborder;
+			// font-style: $font-style;
+			// color: $color_1;
+			// &:hover {
+			// 	color: $color_3;
+			// }
+		}
+	}
 }
-.footer {position: fixed;
+.footer {
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 100px;
 	z-index: 3;
-	background-color: #e2caca;
-	border: solid;
-	
+	background: url(../img/bg5.avif) 0 0 / auto 100% repeat;
+	// border: solid;
+	// opacity: 0.5;
 }
